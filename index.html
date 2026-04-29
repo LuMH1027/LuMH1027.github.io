@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lu Minghao | AI Agent & RAG</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            background: #f7f8fa;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 24px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            margin-left: 24px;
+            color: #444;
+            font-size: 15px;
+        }
+
+        .hero {
+            padding: 90px 0 70px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto 28px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .tagline {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 10px 18px;
+            margin: 8px;
+            border-radius: 999px;
+            border: 1px solid #2563eb;
+            font-size: 15px;
+        }
+
+        .buttons a.primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 8px 14px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 36px 0;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Lu Minghao</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="tagline">AI Agent · RAG · Multimodal Document Understanding</div>
+                <h1>Hi, I'm Lu Minghao.</h1>
+                <p>
+                    I'm a Computer Science student at Shanghai University, focusing on AI Agents,
+                    RAG systems, multimodal document understanding, and LLM application engineering.
+                </p>
+                <div class="buttons">
+                    <a class="primary" href="#projects">View Projects</a>
+                    <a href="mailto:lmh04102@163.com">Contact Me</a>
+                    <a href="https://github.com/你的GitHub用户名" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="card">
+                    <p>
+                        I enjoy building practical AI systems that combine retrieval, memory,
+                        model evaluation, and backend engineering. My current interests include
+                        long-term memory for LLM applications, hybrid retrieval, document parsing,
+                        OCR, and multimodal model applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Feishu Project Decision Memory System</h3>
+                        <p>
+                            A long-term memory system for project discussions. It extracts decisions,
+                            reasons, owners, deadlines, and historical context from Feishu messages
+                            and documents.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>CLI Long-Term Memory System</h3>
+                        <p>
+                            A command-line memory tool for developers, supporting command recording,
+                            workflow reuse, natural language search, and context-aware suggestions.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Long-Memory Enhanced RAG System</h3>
+                        <p>
+                            A multi-stage RAG system with hybrid retrieval, reranking, active retrieval,
+                            multi-hop retrieval, and memory gating.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Document Understanding System</h3>
+                        <p>
+                            An end-to-end document parsing pipeline that converts images and PDFs into
+                            structured Markdown and JSON using layout analysis, OCR, and formula detection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+
+                <div class="skills">
+                    <span class="skill">Python</span>
+                    <span class="skill">C/C++</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">PyTorch</span>
+                    <span class="skill">Transformers</span>
+                    <span class="skill">MindSpore</span>
+                    <span class="skill">RAG</span>
+                    <span class="skill">FAISS</span>
+                    <span class="skill">ChromaDB</span>
+                    <span class="skill">OCR</span>
+                    <span class="skill">Multimodal Models</span>
+                    <span class="skill">SQLite</span>
+                    <span class="skill">SQLAlchemy</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Linux</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2>Latest Blog Posts</h2>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>How I Built a Long-Term Memory System for AI Agents</h3>
+                        <p>Coming soon.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Hybrid Retrieval in RAG: Vector Search + Keyword Search</h3>
+                        <p>Coming soon.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Building an End-to-End Document Understanding Pipeline</h3>
+                        <p>Coming soon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="card">
+                    <p>Email: <a href="mailto:lmh04102@163.com">lmh04102@163.com</a></p>
+                    <p>GitHub: <a href="https://github.com/LuMH1027" target="_blank">github.com/LuMH1027</a></p>
+                    <p>Phone: +86 15901639546</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Lu Minghao. Built with HTML & CSS.</p>
+    </footer>
+</body>
+
+</html>
