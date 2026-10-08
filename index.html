@@ -4,126 +4,207 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lu Minghao | AI Agent & RAG</title>
+    <meta name="description" content="陆铭皓的个人主页，方向为 AI 全栈、后端工程化、声纹识别链路优化、文档理解与检索系统。" />
+    <title>陆铭皓 | AI 全栈与后端工程化</title>
 
     <style>
+        :root {
+            --bg: #f6f7f9;
+            --surface: #ffffff;
+            --ink: #1f2933;
+            --muted: #5d6875;
+            --line: #d9dee7;
+            --blue: #1f5fbf;
+            --green: #14795f;
+            --amber: #9a6318;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
-            background: #f7f8fa;
-            color: #222;
-            line-height: 1.7;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.72;
         }
 
         a {
-            color: #2563eb;
+            color: var(--blue);
             text-decoration: none;
         }
 
+        a:hover {
+            text-decoration: underline;
+        }
+
         .container {
-            width: 90%;
-            max-width: 1050px;
+            width: min(1120px, calc(100% - 40px));
             margin: 0 auto;
         }
 
         header {
-            padding: 24px 0;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
             z-index: 10;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(12px);
         }
 
         nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            min-height: 64px;
         }
 
         .logo {
+            font-size: 18px;
             font-weight: 700;
-            font-size: 20px;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            font-size: 14px;
         }
 
         .nav-links a {
-            margin-left: 24px;
-            color: #444;
-            font-size: 15px;
+            color: var(--muted);
         }
 
         .hero {
-            padding: 90px 0 70px;
-            text-align: center;
+            padding: 72px 0 48px;
         }
 
-        .hero h1 {
-            font-size: 46px;
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 220px;
+            gap: 44px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            margin-bottom: 12px;
+            color: var(--green);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
             margin-bottom: 18px;
+            font-size: 44px;
+            line-height: 1.18;
+            letter-spacing: 0;
         }
 
-        .hero p {
+        .lead {
             max-width: 760px;
-            margin: 0 auto 28px;
+            color: var(--muted);
             font-size: 18px;
-            color: #555;
         }
 
-        .tagline {
-            color: #2563eb;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .buttons a {
-            display: inline-block;
-            padding: 10px 18px;
-            margin: 8px;
-            border-radius: 999px;
-            border: 1px solid #2563eb;
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-top: 24px;
+            color: var(--muted);
             font-size: 15px;
         }
 
-        .buttons a.primary {
-            background: #2563eb;
-            color: white;
+        .portrait {
+            width: 220px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            background: var(--surface);
         }
 
         section {
-            padding: 50px 0;
+            padding: 32px 0;
         }
 
-        section h2 {
-            font-size: 28px;
-            margin-bottom: 22px;
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 10px;
         }
 
-        .card-grid {
+        h2 {
+            font-size: 24px;
+            line-height: 1.25;
+            letter-spacing: 0;
+        }
+
+        .section-note {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
         }
 
         .card {
-            background: white;
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 20px;
         }
 
         .card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 1.35;
+            letter-spacing: 0;
         }
 
-        .card p {
-            color: #555;
+        .meta {
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .card p,
+        .card li {
+            color: var(--muted);
             font-size: 15px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        li + li {
+            margin-top: 6px;
+        }
+
+        .highlight {
+            border-left: 4px solid var(--blue);
+        }
+
+        .highlight.secondary {
+            border-left-color: var(--green);
+        }
+
+        .highlight.tertiary {
+            border-left-color: var(--amber);
         }
 
         .skills {
@@ -133,28 +214,57 @@
         }
 
         .skill {
-            padding: 8px 14px;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 6px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--ink);
             font-size: 14px;
         }
 
         footer {
-            padding: 36px 0;
+            margin-top: 28px;
+            padding: 28px 0 36px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
             text-align: center;
-            color: #666;
-            border-top: 1px solid #e5e7eb;
-            margin-top: 40px;
+            font-size: 14px;
         }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 34px;
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 28px, 1120px);
             }
 
             .nav-links {
                 display: none;
+            }
+
+            .hero {
+                padding-top: 44px;
+            }
+
+            .hero-layout,
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait {
+                width: min(220px, 72vw);
+                order: -1;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .section-head {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 4px;
             }
         }
     </style>
@@ -164,13 +274,13 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Lu Minghao</div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
+                <div class="logo">陆铭皓</div>
+                <div class="nav-links" aria-label="页面导航">
+                    <a href="#about">简介</a>
+                    <a href="#experience">经历</a>
+                    <a href="#projects">项目</a>
+                    <a href="#ai">AI 协作</a>
+                    <a href="#contact">联系</a>
                 </div>
             </nav>
         </div>
@@ -178,137 +288,181 @@
 
     <main>
         <section class="hero">
-            <div class="container">
-                <div class="tagline">AI Agent · RAG · Multimodal Document Understanding</div>
-                <h1>Hi, I'm Lu Minghao.</h1>
-                <p>
-                    I'm a Computer Science student at Shanghai University, focusing on AI Agents,
-                    RAG systems, multimodal document understanding, and LLM application engineering.
-                </p>
-                <div class="buttons">
-                    <a class="primary" href="#projects">View Projects</a>
-                    <a href="mailto:lmh04102@163.com">Contact Me</a>
-                    <a href="https://github.com/LuMH1027" target="_blank">GitHub</a>
+            <div class="container hero-layout">
+                <div>
+                    <div class="eyebrow">AI 全栈 · 后端工程化 · 声纹识别链路优化</div>
+                    <h1>你好，我是陆铭皓。</h1>
+                    <p class="lead">
+                        上海大学计算机科学与技术本科在读，关注 AI 工具开发、后端工程化、音视频会议数据链路、声纹识别评测闭环、文档理解和检索系统。实习和项目中，我习惯把模型能力放进可复现、可评测、可维护的工程流程里。
+                    </p>
+                    <div class="contact-row">
+                        <span>上海大学 · 2027 届本科</span>
+                        <span><a href="mailto:lmh04102@163.com">lmh04102@163.com</a></span>
+                        <span><a href="https://github.com/LuMH1027" target="_blank" rel="noreferrer">GitHub</a></span>
+                    </div>
                 </div>
+                <img class="portrait" src="assets/luminghao.jpg" alt="陆铭皓个人照片" />
             </div>
         </section>
 
         <section id="about">
             <div class="container">
-                <h2>About Me</h2>
-                <div class="card">
+                <div class="section-head">
+                    <h2>个人简介</h2>
+                    <span class="section-note">目标方向：AI 全栈工程师</span>
+                </div>
+                <div class="card highlight">
                     <p>
-                        I enjoy building practical AI systems that combine retrieval, memory,
-                        model evaluation, and backend engineering. My current interests include
-                        long-term memory for LLM applications, hybrid retrieval, document parsing,
-                        OCR, and multimodal model applications.
+                        我主要做后端接口、数据链路、算法工程化和 AI 应用落地。近期在飞书视频会议相关实习中参与会议数据拉取、音频处理、声纹识别链路优化、模型服务封装和统一评测平台接入，也在个人项目中实践过向量检索、关键词检索、文档理解和结构化抽取。
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <div class="section-head">
+                    <h2>实习经历</h2>
+                    <span class="section-note">后端开发、算法工程化、模型服务</span>
+                </div>
+                <div class="grid">
+                    <article class="card highlight">
+                        <h3>字节跳动 · 飞书视频会议后端开发工程师</h3>
+                        <div class="meta">2026.05 至今 · 声纹识别链路优化</div>
+                        <ul>
+                            <li>建设声纹 Autoresearch 实验闭环，沉淀固定评测集、数据缓存、指标门禁和可复现实验记录。</li>
+                            <li>实现 SCD 合并策略，内部评测正确率提升 1.17pp，漏检占比降低 1.18pp。</li>
+                            <li>建设同说话人验证判别系统，替代人工标注声纹训练信息，系统覆盖率约 40%，准确率 99%+。</li>
+                            <li>开发妙记内容导入 RTTM 标注平台接口，将整理耗时从数小时压缩到分钟级。</li>
+                        </ul>
+                    </article>
+
+                    <article class="card highlight secondary">
+                        <h3>上海守扣科技有限公司 · 软件研发工程师</h3>
+                        <div class="meta">2024.11 - 2025.09 · OCR 与文档理解</div>
+                        <ul>
+                            <li>负责算法训练和数据准备，覆盖数据生成、清洗标注、训练配置与评测。</li>
+                            <li>基于 Selenium + Python/JavaScript 设计数据生成 Pipeline，累计产出 1000 万+ 高质量训练数据。</li>
+                            <li>基于 FastAPI 辅助封装多模型评测接口。</li>
+                        </ul>
+                    </article>
+
+                    <article class="card highlight tertiary">
+                        <h3>中国科学院软件研究所 · MindSpore 开源社区开发实习</h3>
+                        <div class="meta">2024.06 - 2024.11 · 模型迁移与昇腾训练优化</div>
+                        <ul>
+                            <li>完成 HuggingFace Transformers 模型到 MindSpore 的迁移与适配，覆盖 Data2VecVision。</li>
+                            <li>基于 CLIPSeg 实现文本驱动图像分割系统，结合昇腾硬件与图模式优化训练。</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="projects">
             <div class="container">
-                <h2>Featured Projects</h2>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>Feishu Project Decision Memory System</h3>
+                <div class="section-head">
+                    <h2>项目经历</h2>
+                    <span class="section-note">检索系统、文档理解、工程化交付</span>
+                </div>
+                <div class="grid">
+                    <article class="card highlight">
+                        <h3>MemLink 忆联：团队知识记忆与检索服务</h3>
+                        <div class="meta">2026.04 - 2026.05 · 核心开发</div>
                         <p>
-                            A long-term memory system for project discussions. It extracts decisions,
-                            reasons, owners, deadlines, and historical context from Feishu messages
-                            and documents.
+                            构建贯通 CLI 与飞书群聊的团队知识引擎，实现 27 个 FastAPI 接口、27 个 Typer 子命令及 SQLite + ChromaDB 双库架构，完成 237 个 Pytest 用例，通过率 99.6%。
                         </p>
-                    </div>
-
-                    <div class="card">
-                        <h3>CLI Long-Term Memory System</h3>
                         <p>
-                            A command-line memory tool for developers, supporting command recording,
-                            workflow reuse, natural language search, and context-aware suggestions.
+                            融合 BGE-M3 向量检索与关键词检索（RRF），结合 6 维排序策略实现 p50 延迟 12ms、Hit@1 100%；基于 Qwen3-VL-8B-Instruct 完成群聊意图分类与结构化决策抽取。
                         </p>
-                    </div>
+                    </article>
 
-                    <div class="card">
-                        <h3>Long-Memory Enhanced RAG System</h3>
+                    <article class="card highlight secondary">
+                        <h3>端到端文档理解系统</h3>
+                        <div class="meta">2025.05 - 2025.06 · 核心开发</div>
                         <p>
-                            A multi-stage RAG system with hybrid retrieval, reranking, active retrieval,
-                            multi-hop retrieval, and memory gating.
+                            集成 doclayout_yolo、YOLOFD、UniMERNet、PaddleOCR 等模型，实现图像/PDF 到 Markdown/JSON 的结构化转换。
                         </p>
-                    </div>
+                        <p>
+                            设计统一 JSON Schema、空间对齐策略和多阶段推理 Pipeline，融合布局块、公式与文本输出，提升解析结果可读性和稳定性。
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                    <div class="card">
-                        <h3>Document Understanding System</h3>
+        <section id="ai">
+            <div class="container">
+                <div class="section-head">
+                    <h2>AI 协作方式</h2>
+                    <span class="section-note">Codex、Trae、Botmux、Cursor</span>
+                </div>
+                <div class="grid">
+                    <article class="card highlight">
+                        <h3>用 Codex 推进工程开发</h3>
                         <p>
-                            An end-to-end document parsing pipeline that converts images and PDFs into
-                            structured Markdown and JSON using layout analysis, OCR, and formula detection.
+                            我会先用 Plan 模式让 AI 通读项目、拆解方案和风险点，确认整体路径后再进入实现。遇到目标较大的功能，会把任务拆成多个阶段，把计划沉淀到文档中，再用 Goal 模式逐步推进，最后由我做架构判断、关键代码审查和结果验收。
                         </p>
-                    </div>
+                    </article>
+
+                    <article class="card highlight secondary">
+                        <h3>用 Botmux 与 TraeX 做实验闭环</h3>
+                        <p>
+                            在声纹 Autoresearch 中，我负责定义研究目标、线上约束、评测指标和晋级规则；Botmux 负责任务编排、心跳监控和异常通知；TraeX 在独立 Git worktree 中并行完成算法实现、测试与实验。固定评测集、数据缓存、指标门禁和可复现实验记录，让实验能复跑、对比和回滚。
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="skills">
             <div class="container">
-                <h2>Skills</h2>
-
-                <div class="skills">
-                    <span class="skill">Python</span>
-                    <span class="skill">C/C++</span>
-                    <span class="skill">FastAPI</span>
-                    <span class="skill">PyTorch</span>
-                    <span class="skill">Transformers</span>
-                    <span class="skill">MindSpore</span>
-                    <span class="skill">RAG</span>
-                    <span class="skill">FAISS</span>
-                    <span class="skill">ChromaDB</span>
-                    <span class="skill">OCR</span>
-                    <span class="skill">Multimodal Models</span>
-                    <span class="skill">SQLite</span>
-                    <span class="skill">SQLAlchemy</span>
-                    <span class="skill">Docker</span>
-                    <span class="skill">Linux</span>
+                <div class="section-head">
+                    <h2>技能栈</h2>
+                    <span class="section-note">偏后端、算法工程化和 AI 应用</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="blog">
-            <div class="container">
-                <h2>Latest Blog Posts</h2>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>How I Built a Long-Term Memory System for AI Agents</h3>
-                        <p>Coming soon.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Hybrid Retrieval in RAG: Vector Search + Keyword Search</h3>
-                        <p>Coming soon.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Building an End-to-End Document Understanding Pipeline</h3>
-                        <p>Coming soon.</p>
-                    </div>
+                <div class="skills" aria-label="技能列表">
+                    <span class="skill">Python</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">Go</span>
+                    <span class="skill">C/C++</span>
+                    <span class="skill">Linux</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Pytest</span>
+                    <span class="skill">REST API</span>
+                    <span class="skill">Typer</span>
+                    <span class="skill">SQLite</span>
+                    <span class="skill">ChromaDB</span>
+                    <span class="skill">FAISS</span>
+                    <span class="skill">BGE-M3</span>
+                    <span class="skill">RRF</span>
+                    <span class="skill">RAG</span>
+                    <span class="skill">PaddleOCR</span>
+                    <span class="skill">MindSpore</span>
+                    <span class="skill">Codex</span>
+                    <span class="skill">Trae</span>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
-                <h2>Contact</h2>
+                <div class="section-head">
+                    <h2>联系我</h2>
+                    <span class="section-note">欢迎交流 AI 工程化、检索系统和文档理解</span>
+                </div>
                 <div class="card">
-                    <p>Email: <a href="mailto:lmh04102@163.com">lmh04102@163.com</a></p>
-                    <p>GitHub: <a href="https://github.com/LuMH1027" target="_blank">github.com/LuMH1027</a></p>
-                    <p>Phone: +86 15901639546</p>
+                    <p>Email：<a href="mailto:lmh04102@163.com">lmh04102@163.com</a></p>
+                    <p>GitHub：<a href="https://github.com/LuMH1027" target="_blank" rel="noreferrer">github.com/LuMH1027</a></p>
+                    <p>当前所在地：上海</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Lu Minghao. Built with HTML & CSS.</p>
+        <p>© 2026 陆铭皓。使用 HTML 与 CSS 构建，部署于 GitHub Pages。</p>
     </footer>
 </body>
 
